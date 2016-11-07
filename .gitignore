@@ -2,3 +2,5 @@ db.sqlite3
 run.sh
 debug.sh
 build.sh
+__pycache__/
+*.py[cod]
