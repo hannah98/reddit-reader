@@ -1,0 +1,25 @@
+        <div class="sitetable nestedlisting">
+            {% for c in comments %}
+            <div class="thing comment noncollapsed" id="{{ c.id }}">
+                <div class="entry unvoted">
+                    <p class="tagline">
+                        <a class="expand" href="javascript:void(0)" onclick="return togglecomment(this)">[-]</a>
+                        <a class="author may-blank" href="#">{{ c.author}}</a>
+                        <span class="score unvoted">{{ c.score }} points</span>
+                    </p>
+                    <div class="usertext usertext-body may-blank-within md-container">
+                        {% autoescape off %}{{ c.body_html }}{% endautoescape %}
+                    </div><!-- .usertext-body -->
+                </div><!-- .entry -->
+                {% if c.replies %}
+                <div class="child">
+                    {% with c.replies as comments %}
+                        {% include "reddit/nested_comments.html" %}
+                    {% endwith %}
+                </div><!-- .child -->
+                {% else %}
+                    <div class="clearleft"></div>
+                {% endif %}
+            </div><!-- .thing comment -->
+            {% endfor %} 
+        </div><!-- .nestedlisting -->
