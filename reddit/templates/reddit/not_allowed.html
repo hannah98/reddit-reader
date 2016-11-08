@@ -2,9 +2,10 @@
 
 {% load fix_urls %}
 
-{% block title %}Reddit Reader - Home{% endblock %}
+{% block title %}{{ subreddit }}{% endblock %}
 {% block content %}
 <div class="content">
 <h1>Reddit Reader - please choose a subreddit above.</h1>
+<h2>Subreddit {{ subreddit }} is not allowed...</h2>
 </div> <!-- .content -->
 {% endblock %}

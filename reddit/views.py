@@ -20,16 +20,17 @@ def index(request):
     return render(request, 'reddit/index.html', context)
 
 def subreddit(request,subreddit):
+    if not is_subreddit_allowed(subreddit):
+        not_allowed_context = { 'subreddit': subreddit, 'allowed_subreddits': allowed_subreddits }
+        logger.error("Subreddit %s not allowed" % subreddit)
+        return render(request, 'reddit/not_allowed.html', not_allowed_context)
+
     r = praw.Reddit(user_agent=UA)
     sr = r.get_subreddit(subreddit)
     submissions = sr.get_hot(limit=25)
     
     context = { 'submissions': submissions, 'subreddit': subreddit, 'allowed_subreddits': allowed_subreddits }
     #logger.error(vars(submission))
-    if is_subreddit_allowed(subreddit):
-        logger.error("Subreddit allowed")
-    else:
-        logger.error("Subreddit NOT allowed")
         
     return render(request, 'reddit/subreddit.html', context)
 
