@@ -553,3 +553,7 @@ a.author { margin-right: 0.5em; }
 
 .comment > .entry .usertext-body { font-size: 13px; }
 div.md { padding: 5px 10px; }
+#header-redditreader { color: #2583d4; padding: 10px; }
+#header-redditreader .default-header { color: #2583d4; padding-left: 10px; font-size: x-large; }
+#header-bottom-left { margin-top: 10px; margin-bottom: 10px; }
+
