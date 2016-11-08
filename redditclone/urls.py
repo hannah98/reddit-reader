@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include,url
 from django.contrib import admin
+from reddit import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     url(r'^r/', include('reddit.urls')),
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
 ]

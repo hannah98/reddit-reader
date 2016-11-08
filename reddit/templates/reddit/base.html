@@ -26,16 +26,18 @@
                     <span class="separator"> | </span>
                     <ul class="flat-list sr-bar hover">
                         <!-- hardcoded some initial choices - need to be dynamic later -->
-                        <li><a class="choice" href="/r/selfhosted">selfhosted</a></li>
-                        <li><span class="separator">-</span><a class="choice" href="/r/homelab">homelab</a></li>
-                        {% block subredditlist %}
-                        {% endblock subredditlist %}
+                        <li><a class="choice" href="/">home</a></li>
+                        {% if allowed_subreddits %}
+                            {% for sr in allowed_subreddits %}
+                                <li><span class="separator">-</span><a class="choice" href="/r/{{ sr }}">{{ sr }}</a></li>
+                            {% endfor %}
+                        {% endif %}
                     </ul>
                 </div><!-- .sr-list -->
             </div><!-- .width-clip -->
         </div><!-- #sr-header-area -->
         <div id="header-bottom-left">
-            <span id="header-redditreader" class="default-header"><i class="fa fa-reddit fa-3x" aria-hidden="true"></i><a class="default-header" href="#">Reddit Reader</a></span>
+            <span id="header-redditreader" class="default-header"><i class="fa fa-reddit fa-3x" aria-hidden="true"></i><a class="default-header" href="/">Reddit Reader</a></span>
             <span class="hover pagename redditname">
                 {% if subreddit %}
                     <a href="/r/{{ subreddit }}">{{ subreddit }}</a>

@@ -3,8 +3,8 @@
 {% load fix_urls %}
 
 {% block title %}{{ subreddit }}{% endblock %}
-<div class="content">
 {% block content %}
+<div class="content">
 {% if submissions %}
     <div>
         {% for s in submissions %}
