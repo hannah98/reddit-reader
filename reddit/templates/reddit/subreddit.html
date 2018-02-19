@@ -22,7 +22,7 @@
                         <span class="domain"> ({{ s.domain }}) </span>
                     </p>
                     <p class="tagline">
-                        submitted by {{ s.author }}
+                        submitted {{ s.created_utc|age }} by {{ s.author }}
                     </p>
                     <ul class="flat-list buttons">
                         <li class="first">
