@@ -1,5 +1,7 @@
 from django import template
 import re
+from datetime import datetime, timedelta
+from django.utils.timesince import timesince
 
 register = template.Library()
 
