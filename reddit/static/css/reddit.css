@@ -557,3 +557,6 @@ div.md { padding: 5px 10px; }
 #header-redditreader .default-header { color: #2583d4; padding-left: 10px; font-size: x-large; }
 #header-bottom-left { margin-top: 10px; margin-bottom: 10px; }
 
+#sr-header-area { white-space: normal !important; height: auto !important; }
+#sr-header-area .width-clip { position: relative !important; }
+
