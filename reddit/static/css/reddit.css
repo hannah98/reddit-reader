@@ -141,7 +141,7 @@ body[orient="landscape"] > #topbar > h1 { margin-left: -125px; width: 250px; }
 
 /*Things*/
 /*Arrows*/
-.link .arrow, .comment .arrow, .message .arrow { width: 28px; height: 28px; cursor: pointer; display: block; margin: 1px auto 0px; outline: none; }
+.link .arrow, .comment .arrow, .message .arrow { width: 28px; cursor: pointer; display: block; margin: 1px auto 0px; outline: none; }
 .link .arrow.up, .comment .arrow.up, .message .arrow.up { background-image: url("../compact/upvote.png"); /*SPRITE*/ }
 .link .arrow.down, .comment .arrow.down, .message .arrow.down { background-image: url("../compact/downvote.png"); /*SPRITE*/ }
 .link .arrow.upmod, .comment .arrow.upmod, .message .arrow.upmod { background-image: url("../compact/upvote-active.png"); /*SPRITE*/ }
@@ -157,7 +157,7 @@ body[orient="landscape"] > #topbar > h1 { margin-left: -125px; width: 250px; }
 /* Voting stuff */
 .link > .rank { float: left; margin-top: 17px; font-size: 12px; color: #aaa; }
 
-.link > .midcol { float: left; width: 25px; margin: 0 10px 1px 0px; padding-bottom: 5px; position: relative; }
+.link > .midcol { float: left; width: 28px; margin: 0 10px 1px 0px; padding-bottom: 5px; position: relative; }
 
 .link > .entry .score, .link > .entry.likes .score.unvoted, .link > .entry.dislikes .score.unvoted { display: none; }
 
