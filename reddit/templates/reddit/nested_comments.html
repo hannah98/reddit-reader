@@ -4,7 +4,7 @@
                 <div class="entry unvoted">
                     <p class="tagline">
                         <a class="expand" href="javascript:void(0)" onclick="return togglecomment(this)">[-]</a>
-                        <a class="author may-blank" href="#">{{ c.author}}</a>
+                        <a class="author may-blank {% if c.is_submitter %} submitter{% endif %}" href="#">{{ c.author}}</a>
                         <span class="score unvoted">{{ c.score }} points</span>
                     </p>
                     <div class="usertext usertext-body may-blank-within md-container">

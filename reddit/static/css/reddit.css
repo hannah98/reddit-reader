@@ -378,7 +378,7 @@ body.post-under-6h-old .gilded-icon { opacity: .55; }
 .comment > .morecomments { margin: 5px; text-align: right; }
 
 /*Link colors*/
-.tagline .submitter { color: blue; }
+.tagline .submitter { color: #D36135 !important; }
 
 .tagline .friend { color: orange; /*Why not orangered? Because orangered can look very red on a mobile*/ }
 
