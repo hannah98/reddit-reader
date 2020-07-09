@@ -5,3 +5,4 @@ build.sh
 __pycache__/
 *.py[cod]
 praw.ini
+env.makefile
