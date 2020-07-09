@@ -1,0 +1,8 @@
+#!/bin/bash
+
+VERSION_BASE="1.0"
+
+BUILDNUMBER=$(date "+%j%H%M%S")
+VERSION="${VERSION_BASE}.${BUILDNUMBER}"
+
+echo "$VERSION"
