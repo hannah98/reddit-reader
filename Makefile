@@ -41,6 +41,6 @@ commit: ## Commit changes to git (will be prompted for commit message)
 tag: ## Create a git tag
 	@echo git tag -a -m "v$(VERSION)" "v$(VERSION)"
 
-push: commit tag ## Push git changes
+push: ## Push git changes
 	git push
 	git push --tags
