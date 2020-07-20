@@ -54,6 +54,8 @@ ALLOWED_SUBREDDITS = [
     'pfsense',
 ]
 
+SUBREDDIT_LIMIT = 25
+
 ALLOWED_HOSTS = ['localhost']
 
 SECRET_KEY = 'CHANGE ME'
@@ -72,5 +74,5 @@ If you are running in docker, you will want to mount the directory that contains
 docker run -d  -p 80:8000 -v $PWD/customsettings:/app/customsettings -v $PWD/praw.ini:/app/praw.ini --name=reddit-reader furiousgeorge/reddit-reader
 ```
 
-
+The ```SUBREDDIT_LIMIT``` allows you to specify how many posts to return when fetching posts for a subreddit.  The Reddit API maximum is 100.
 

@@ -6,16 +6,17 @@ import json, collections
 from urllib import request
 import praw
 import logging
-from . import get_allowed_subreddits
-
-#from django.conf import settings
+import os
+from . import get_allowed_subreddits, get_subreddit_limit
 
 UA = 'redditPull: personal (non public) app to pull a specific subreddit.  V1.1'
 logger = logging.getLogger(__name__)
+logger.setLevel(os.getenv("LOGLEVEL", "WARNING"))
+logger.error("Log Level %s", logger.level)
 allowed_subreddits = get_allowed_subreddits()
+subreddit_limit = get_subreddit_limit()
 
 def index(request):
-    #return HttpResponse("You're at the subreddit index.")
     context = { 'title': 'Reddit Reader Home', 'allowed_subreddits': allowed_subreddits  }
     return render(request, 'reddit/index.html', context)
 
@@ -26,10 +27,10 @@ def subreddit(request,subreddit):
         return render(request, 'reddit/not_allowed.html', not_allowed_context)
 
     r = praw.Reddit(user_agent=UA)
-    submissions = r.subreddit(subreddit).hot(limit=25)
+    logger.info("Fetching %i entries from %s",subreddit_limit,subreddit)
+    submissions = r.subreddit(subreddit).hot(limit=subreddit_limit)
     
     context = { 'submissions': submissions, 'subreddit': subreddit, 'allowed_subreddits': allowed_subreddits }
-    #logger.error(vars(submission))
         
     return render(request, 'reddit/subreddit.html', context)
 

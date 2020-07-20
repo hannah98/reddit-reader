@@ -32,7 +32,7 @@ stop: ## Stop and remove a running container
 	docker rm -f $(APP_NAME) || true
 
 run: stop build ## Run container
-	docker run -it --name=$(APP_NAME) -v $(CUSTOMDIR):/app/customsettings:ro -v $(PRAWINI):/app/praw.ini:ro -p $(PORT):8000 $(APP_NAME)
+	docker run -it --name=$(APP_NAME) -e LOGLEVEL=DEBUG -v $(CUSTOMDIR):/app/customsettings:ro -v $(PRAWINI):/app/praw.ini:ro -p $(PORT):8000 $(APP_NAME)
 
 tag: ## Create a git tag
 	@git tag -a "v$(VERSION)" -m "v$(VERSION)"

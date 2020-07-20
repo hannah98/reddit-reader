@@ -5,3 +5,15 @@ def get_allowed_subreddits():
         return settings.ALLOWED_SUBREDDITS
     else:
         return None
+
+def get_subreddit_limit():
+    limit = 25
+    if hasattr(settings, 'SUBREDDIT_LIMIT'):
+        trylimit = settings.SUBREDDIT_LIMIT
+        try:
+            limit = int(trylimit)
+            if limit <0 or limit > 100:
+                limit = 25
+        except ValueError:
+            pass
+    return limit
