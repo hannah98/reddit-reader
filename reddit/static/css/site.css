@@ -16,6 +16,11 @@ a {
 a:visited {
     color: #4f565b;
 }
+h1 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+}
 .comment .entry {
     margin-right: 50px;
 }
@@ -242,6 +247,89 @@ a:visited {
 .md ul {
     list-style: disc outside;
 }
+.message > .entry .usertext-body,
+.message > .entry .md {
+    font-size: 11px;
+    word-wrap: break-word;
+}
+.md {
+    overflow: auto;
+    font-size: small;
+}
+.md p,
+.md h1 {
+    margin: 5px 0;
+}
+.md h1 {
+    font-weight: bold;
+    font-size: 100%;
+}
+.md h2 {
+    font-weight: bold;
+    font-size: 100%;
+}
+.md h2,.md h4 {
+    font-weight:500
+}
+.md h1,.md h2 {
+    font-size:1.2857142857142858em;
+    line-height:1.3888888888888888em;
+    margin-top:0.8333333333333334em;
+    margin-bottom:0.8333333333333334em
+}
+.md > * {
+    margin-bottom: 0px;
+}
+.md strong {
+    font-weight: bold;
+}
+.md em {
+    font-style: italic;
+}
+.md strong em {
+    font-style: italic;
+    font-weight: bold;
+}
+.md img {
+    display: none;
+}
+.md ol,
+.md ul {
+    margin: 10px 2em;
+}
+.md ul {
+    list-style: disc outside;
+}
+.md ol {
+    list-style: decimal outside;
+}
+.md pre {
+    margin: 10px;
+}
+.md blockquote,
+.help blockquote {
+    border-left: 2px solid #369;
+    padding-left: 4px;
+    margin: 5px;
+    margin-right: 15px;
+}
+.md td,
+.md th {
+    border: 1px solid #eee;
+    padding: 1px 3px;
+}
+.md th {
+    font-weight: bold;
+}
+.md table {
+    margin: 5px 10px;
+}
+.md center {
+    text-align: left;
+}
+div.md {
+    padding: 5px 10px;
+}
 a.author {
     margin-right: 0.5em;
 }
@@ -428,7 +516,7 @@ a {
     vertical-align: bottom;
 }
 .pagename a {
-    color: #000;
+    color: #888;
 }
 .tabmenu {
     list-style-type: none;
@@ -491,6 +579,11 @@ a {
     margin-left: 3px;
     opacity: 1;
 }
+.entry .buttons li a {
+    color: #888;
+    font-weight: bold;
+    padding: 0 1px;
+}
 .tagline {
     color: #888;
     font-size: x-small;
@@ -501,6 +594,9 @@ a {
 }
 .tagline a:hover {
     text-decoration: underline;
+}
+.tagline .submitter {
+    color: #D36135;
 }
 a.author {
     margin-right: 0.5em;
@@ -535,10 +631,20 @@ a.author {
     margin: 0 0 10px 10px;
     overflow: auto;
 }
+.domain {
+    color: #888;
+    font-size: x-small;
+    white-space: nowrap;
+}
 .link {
     margin: 0;
     margin-bottom: 8px;
     padding-left: 3px;
+}
+.link .domain {
+    color: #737373;
+    font-size: 9px;
+    margin-left: 5px;
 }
 .link .score {
     text-align: center;
