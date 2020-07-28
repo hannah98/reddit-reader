@@ -26,7 +26,7 @@ help: ## This help.
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make <target>\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  %-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
 
 build: ## Build the container
-	docker build -t $(APP_NAME) .
+	docker build -t $(APP_NAME) --build-arg BUILD_VERSION=$(VERSION) .
 
 stop: ## Stop and remove a running container
 	docker rm -f $(APP_NAME) || true
