@@ -17,3 +17,9 @@ def get_subreddit_limit():
         except ValueError:
             pass
     return limit
+
+def get_app_version():
+    if hasattr(settings, 'VERSION'):
+        return settings.VERSION
+    else:
+        return '1.0.unknown'

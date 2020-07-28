@@ -26,6 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+VERSION = os.getenv("VERSION", "1.0.unknown")
+
 # Application definition
 
 INSTALLED_APPS = [

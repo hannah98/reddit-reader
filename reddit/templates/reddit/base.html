@@ -15,12 +15,8 @@
 
     <!-- Custom styles for this site -->
     {% block styles %}
-<!--
-    <link href="{% static '/css/reddit.css' %}" rel="stylesheet">
-    <link href="{% static '/css/reddit.min.css' %}" rel="stylesheet">
--->
 
-    <link href="{% static '/css/site.css' %}" rel="stylesheet">
+    <link href="{% static '/css/site.css' %}?v={{ app_version }}" rel="stylesheet">
     <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
     {% endblock styles %}
   </head>
@@ -52,11 +48,12 @@
             <ul class="tabmenu "></ul>
         </div><!-- #header-bottom-left -->
         <div id="header-bottom-right">
+            <span class="app-version">{{ app_version }}</span>
         </div><!-- #header-bottom-right -->
     </div><!-- #header -->
     {% block content %}
     {% endblock content %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static '/js/site.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/site.js' %}?v={{ app_version }}"></script>
   </body>
 </html>
