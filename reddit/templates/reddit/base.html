@@ -20,12 +20,12 @@
     <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
     {% endblock styles %}
   </head>
-  <body>
+  <body class="dark-theme || light-theme">
     <div id="header" role="banner">
         <div id="sr-header-area">
             <div class="width-clip">
                 <div class="sr-list">
-                    <span class="separator"> | </span>
+                    <span class="separator">&nbsp;</span>
                     <ul class="flat-list sr-bar hover">
                         <!-- hardcoded some initial choices - need to be dynamic later -->
                         <li><a class="choice" href="/">home</a></li>
@@ -45,7 +45,14 @@
                     <a href="/r/{{ subreddit }}">{{ subreddit }}</a>
                 {% endif %}
             </span>
-            <ul class="tabmenu "></ul>
+            <div class="tabmenu">
+                <a aria-label="Toggle dark mode" id="theme-switch" class="navbar-item is-inline-block-mobile theme-switch">
+                    <i class="fa fa-adjust fa-2x" aria-hidden="true"></i>
+<!-- future release of FA
+                    <i class="fas fa-fw fa-adjust fa-2x" aria-hidden="true"></i>
+-->
+                </a>
+            </div>
         </div><!-- #header-bottom-left -->
         <div id="header-bottom-right">
             <span class="app-version">{{ app_version }}</span>
