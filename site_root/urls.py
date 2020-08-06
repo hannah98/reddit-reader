@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include,url
+from django.views.generic import RedirectView
 from reddit import views
 
 urlpatterns = [
+    url(r'favicon\.ico$',RedirectView.as_view(url='/static/favicon.ico')),
+    url(r'apple-touch-icon.*\.png$',RedirectView.as_view(url='/static/reddit-128.png')),
     url(r'^$', views.index, name='index'),
     url(r'^r/', include('reddit.urls')),
 ]
