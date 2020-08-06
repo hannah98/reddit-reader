@@ -18,9 +18,7 @@
                 <p class="tagline ">submitted by {{ submission.author }}</p>
                 <div class="expando">
                     <div class="usertext-body may-blank-within md-container ">
-                        <div class="md">
-                            {% autoescape off %}{{ submission.selftext_html }}{% endautoescape %}
-                        </div>
+                        {% autoescape off %}{{ submission.selftext_html }}{% endautoescape %}
                     </div>
                 </div>
             </div>
